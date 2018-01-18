@@ -43,30 +43,45 @@ new Vue({
                     console.log(error);
                 });
         },
+        get: function(key) {
+            if (this.errors.hasOwnProperty(key)) {
+                return this.errors[key];
+            }
+                
+        },
+        set: function(key, val) {
+            this.errors[key] = val;
+        },
+
+        clear: function(key) {
+            if (this.errors.hasOwnProperty(key)) {
+                delete this.errors[key]
+            }
+        }
     },
     computed: {
         
-        error: function() {
-            var self = this;
-            return {
-                    get: function(key) {
-                        if (self.errors.hasOwnProperty(key)) {
-                            return self.errors[key];
-                        }
+        // error: function() {
+        //     var self = this;
+        //     return {
+        //             get: function(key) {
+        //                 if (self.errors.hasOwnProperty(key)) {
+        //                     return self.errors[key];
+        //                 }
                             
-                    },
-                    set: function(key, val) {
-                        self.errors[key] = val;
-                    },
+        //             },
+        //             set: function(key, val) {
+        //                 self.errors[key] = val;
+        //             },
 
-                    clear: function(key) {
-                        if (self.errors.hasOwnProperty(key)) {
-                            delete self.errors[key]
-                        }
-                    }
+        //             clear: function(key) {
+        //                 if (self.errors.hasOwnProperty(key)) {
+        //                     delete self.errors[key]
+        //                 }
+        //             }
                     
-                }
-        }
+        //         }
+        // }
     }
 
 })

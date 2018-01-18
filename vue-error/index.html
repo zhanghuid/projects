@@ -5,11 +5,11 @@
 </head>
 <body>
     <div id="app">
-        <form v-on:submit.prevent="onSubmit" @keydown="error.clear($event.target.name)">
+        <form v-on:submit.prevent="onSubmit" @keydown="clear($event.target.name)">
             username: <input type="text" v-model='model.username' name="username"><br/>
-            <span>{{ error.get('username') }}</span><br/>
+            <span>{{ get('username') }}</span><br/>
             title: <input type="text" v-model='model.title' name="title"><br/>
-            <span>{{ error.get('title') }}</span><br/>
+            <span>{{ get('title') }}</span><br/>
             <button>提交</button>
         </form>
         <span>{{ msg }}</span>
