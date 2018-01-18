@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div id="app">
+        <form v-on:submit.prevent="onSubmit" @keydown="error.clear($event.target.name)">
+            username: <input type="text" v-model='model.username' name="username"><br/>
+            <span>{{ error.get('username') }}</span><br/>
+            title: <input type="text" v-model='model.title' name="title"><br/>
+            <span>{{ error.get('title') }}</span><br/>
+            <button>提交</button>
+        </form>
+        <span>{{ msg }}</span>
+    </div>
+
+    <script type="text/javascript" src="./vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="./app.js"></script>
+</body>
+</html>
