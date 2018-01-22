@@ -1,0 +1,33 @@
+{
+  "name": "webpack-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "cross-env WEBPACK_ENV=build webpack",
+    "dev": "cross-env WEBPACK_ENV=dev webpack --progress --colors --watch",
+    "test": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js",
+    "fix": "eslint --fix ./src/*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "eslint": "^4.13.1",
+    "eslint-loader": "^1.9.0",
+    "mocha": "^4.0.1",
+    "webpack": "^3.10.0",
+    "yargs": "^10.0.3",
+    "cross-env": "^5.1"
+  },
+  "license": "ISC"
+}
